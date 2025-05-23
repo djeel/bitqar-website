@@ -7,9 +7,9 @@ export default {
     theme: {
       extend: {
         colors: {
-          'bitqar-green': '#A1EAD9',
-          'bitqar-dark-green': '#1E5F5A',
-          'bitqar-text-dark': '#333333',
+          'bitqar-green': '#6CFFDD',
+          'bitqar-dark-green': '#407569',
+          'bitqar-text-dark': '#000000',
           'bitqar-text-light': '#FFFFFF',
           'bitqar-bg-light': '#F0F8F8',
         },

@@ -32,25 +32,25 @@ const Header: React.FC = () => {
           */}
           <a
             href="#home"
-            className="text-gray-700 hover:text-bitqar-dark font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
           >
             Home
           </a>
           <a
             href="#about"
-            className="text-gray-700 hover:text-bitqar-dark font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
           >
             About
           </a>
           <a
             href="#developers"
-            className="text-gray-700 hover:text-bitqar-dark font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
           >
             Developers
           </a>
           <a
             href="#wallet"
-            className="text-gray-700 hover:text-bitqar-dark font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
           >
             Wallet
           </a>
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
           {/* Exemple de bouton de menu burger simple (icône à ajouter) */}
           <button
             aria-label="Ouvrir le menu principal"
-            className="text-gray-700 hover:text-bitqar-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bitqar-dark"
+            className="text-gray-700 hover:text-bitqar-green focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bitqar-dark"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
