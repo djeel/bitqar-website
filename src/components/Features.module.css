@@ -1,0 +1,14 @@
+.feature3d {
+  perspective: 1200px;
+}
+
+.feature3dInner {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, box-shadow;
+}
+
+.feature3dInner:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 16px 40px 0 rgba(64, 117, 105, 0.18), 0 1.5px 8px 0 rgba(108,255,221,0.12);
+  z-index: 2;
+}
