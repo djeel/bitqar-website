@@ -4,22 +4,13 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-bitqar-dark-light to-white overflow-hidden"
+      className="relative h-screen flex items-center justify-center text-center bg-transparent overflow-hidden"
       // Based on hero.jpg, it's a subtle gradient rather than a direct image background.
       // If the image itself is a gradient, this is better.
       // If it's a more complex graphic, consider it as an actual background image.
       // For now, I'll use a gradient that mimics the provided image.
     >
-      {/* Visual background as per hero.jpg (subtle gradient) */}
-      <div className="absolute inset-0 z-0 opacity-50"></div>
-      {/* Overlay gradient Figma */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(90deg, #78dbc4 0%, rgba(0,0,0,0) 100%)',
-          opacity: 0.4,
-        }}
-      ></div>
+
 
       <div className="relative z-10 p-4">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
