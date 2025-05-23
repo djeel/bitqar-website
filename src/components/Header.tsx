@@ -16,8 +16,8 @@ const Header: React.FC = () => {
         <div className="flex items-center h-full">
           {/* S'assurer que le chemin vers le logo est correct et dans le dossier `public` ou géré par votre bundler. */}
           <img
-            src="/bitqar-logo.png" // Assurez-vous que ce chemin est correct. Par exemple, si dans public/images, ce serait /images/bitqar-logo.png
-            alt="Bitqar Logo"
+            src="/bitqar-logo.svg" // Assurez-vous que ce chemin est correct. Par exemple, si dans public/images, ce serait /images/bitqar-logo.png
+            alt="/bitqar-logo-form.svg"
             className="h-10 w-auto" // Simplifié : `h-10` (40px) et `w-auto` est suffisant. Le navigateur maintiendra les proportions.
                                   // `max-h-[40px]` est redondant si `h-10` est déjà défini.
                                   // `max-w-[180px]` peut être utile si le logo est très large.
@@ -32,25 +32,25 @@ const Header: React.FC = () => {
           */}
           <a
             href="#home"
-            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 font-medium text-lg transition-colors duration-150" onMouseEnter={e => (e.currentTarget.style.color = '#407569')} onMouseLeave={e => (e.currentTarget.style.color = '')}
           >
             Home
           </a>
           <a
             href="#about"
-            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 font-medium text-lg transition-colors duration-150" onMouseEnter={e => (e.currentTarget.style.color = '#407569')} onMouseLeave={e => (e.currentTarget.style.color = '')}
           >
             About
           </a>
           <a
             href="#developers"
-            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 font-medium text-lg transition-colors duration-150" onMouseEnter={e => (e.currentTarget.style.color = '#407569')} onMouseLeave={e => (e.currentTarget.style.color = '')}
           >
             Developers
           </a>
           <a
             href="#wallet"
-            className="text-gray-700 hover:text-bitqar-green font-medium text-lg transition-colors duration-150"
+            className="text-gray-700 font-medium text-lg transition-colors duration-150" onMouseEnter={e => (e.currentTarget.style.color = '#407569')} onMouseLeave={e => (e.currentTarget.style.color = '')}
           >
             Wallet
           </a>
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
           {/* Exemple de bouton de menu burger simple (icône à ajouter) */}
           <button
             aria-label="Ouvrir le menu principal"
-            className="text-gray-700 hover:text-bitqar-green focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bitqar-dark"
+            className="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bitqar-dark" onMouseEnter={e => (e.currentTarget.style.color = '#6CFFDD')} onMouseLeave={e => (e.currentTarget.style.color = '')}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
