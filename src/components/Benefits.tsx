@@ -2,7 +2,7 @@ import React from 'react';
 
 const Benefits: React.FC = () => {
   return (
-    <section id="benefits" className="relative py-16 md:py-24 bg-transparent px-4 overflow-hidden">
+    <section id="benefits" className="relative py-16 md:py-24 bg-transparent px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Gradient background Figma */}
       <div
         className="absolute left-0 right-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"

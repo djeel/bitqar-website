@@ -18,7 +18,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, className
 
   if (isSpecialCard === '0.5') {
     return (
-      <div className={`${base} ${padding} flex flex-col items-center justify-center text-center h-[340px] w-full max-w-[343px]`}>
+      <div className={`${base} ${padding} flex flex-col items-center justify-center text-center h-[340px] w-full max-w-[340px]`}>
         <span className="text-[96px] leading-none font-bold text-bitqar-dark">0.5</span>
         <span className="text-gray-700 text-2xl font-semibold mt-4">Second block times</span>
       </div>
@@ -27,7 +27,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, className
   if (isSpecialCard === 'finality') {
     return (
       <div
-        className={`${base} relative overflow-hidden flex flex-col items-end justify-end h-[340px] w-full max-w-[344px] p-0`}
+        className={`${base} relative overflow-hidden flex flex-col items-end justify-end h-[340px] w-full max-w-[340px] p-0`}
         style={{
           borderRadius: 30,
           backgroundImage: `url('/card5.svg')`,
@@ -63,7 +63,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, className
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className="py-16 md:py-24 bg-transparent px-4">
+    <section id="features" className="py-16 md:py-24 bg-transparent px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1365px] flex flex-col items-center">
         <h2 className="text-3xl md:text-5xl font-bold text-bitqar-text-dark mb-12 md:mb-16 leading-tight text-center">
           The L1 Quantum Blockchain with <br className="hidden md:block"/> Endless Potential

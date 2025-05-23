@@ -4,7 +4,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center text-center bg-transparent overflow-hidden"
+      className="relative h-screen flex items-center justify-center text-center bg-transparent overflow-hidden px-4 sm:px-6 lg:px-8"
       // Based on hero.jpg, it's a subtle gradient rather than a direct image background.
       // If the image itself is a gradient, this is better.
       // If it's a more complex graphic, consider it as an actual background image.
