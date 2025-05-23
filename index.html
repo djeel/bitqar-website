@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitqar - Post-Quantum Secure Blockchain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/fonts/Sk-Modernist.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              skmodernist: ['Sk-Modernist', 'sans-serif'],
+            },
+            colors: {
+              'pq-primary': '#F8FAFC', // Light background
+              'pq-secondary': '#E0F7FA', // Light turquoise background
+              'pq-accent': '#1DE9B6', // Modern turquoise accent
+              'pq-accent-dark': '#00BFAE', // Darker turquoise for hover
+              'pq-text-primary': '#222F3E', // Dark text for light bg
+              'pq-text-secondary': '#607D8B', // Muted blue/gray for secondary text
+              'pq-border': '#B2EBF2', // Light turquoise border
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(0, 224, 255, 0.3), 0 0 10px rgba(0, 224, 255, 0.2)' },
+                '50%': { boxShadow: '0 0 20px rgba(0, 224, 255, 0.5), 0 0 30px rgba(0, 224, 255, 0.4)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^6.23.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-pq-primary text-pq-text-primary font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
