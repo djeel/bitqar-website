@@ -2,41 +2,52 @@ import React from 'react';
 
 const Community: React.FC = () => {
   return (
-    <section id="community" className="py-16 md:py-24 bg-bitqar-bg-light px-4">
-      <div className="container mx-auto text-center max-w-5xl">
-        <h2 className="text-3xl md:text-5xl font-bold text-bitqar-text-dark mb-8 md:mb-10 leading-tight">
+    <section id="community" className="relative py-16 md:py-24 bg-bitqar-bg-light px-4 overflow-hidden">
+      {/* Gradient background Figma */}
+      <div
+        className="absolute left-0 right-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, rgba(0,0,0,0) 0%, #78dbc4 100%)',
+          opacity: 0.4,
+        }}
+      ></div>
+      <div className="relative z-10 mx-auto max-w-[1365px] md:text-left pl-0">
+        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-10 leading-tight" style={{ color: '#40757b' }}>
           Join the global community behind Bitqar
         </h2>
-        <p className="text-gray-600 text-lg md:text-xl mb-12">
+        <p className="text-black text-lg md:text-xl mb-6">
           With a thriving community of members worldwide, Bitqar is backed by passionate <br className="hidden md:block"/> supporters driving the future of blockchain technology. Connect, collaborate, and grow <br className="hidden md:block"/> with us as we shape the next generation of decentralized solutions.
         </p>
-        <p className="text-bitqar-text-dark text-xl md:text-2xl font-semibold mb-8">
+        <p className="text-black text-xl md:text-2xl font-semibold mb-6">
           Join the Bitqar community today.
         </p>
-
-        <div className="flex justify-center space-x-6 mb-12">
-          {/* Placeholder icons for Discord, Twitter, GitHub, etc. */}
-          {/* In a real scenario, these would be SVG icons */}
-          <a href="#" className="text-bitqar-dark-green hover:text-bitqar-green transition-colors duration-300">
-            <img src="https://via.placeholder.com/48/4F46E5/FFFFFF?text=D" alt="Discord" className="w-12 h-12 rounded-lg" />
+        <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-6 items-center md:items-start mb-10 md:mb-12 justify-center md:justify-start">
+          <a href="#" aria-label="Discord" className="hover:text-[#78dbc4]">
+            <img src="/discord.svg" alt="Discord" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
           </a>
-          <a href="#" className="text-bitqar-dark-green hover:text-bitqar-green transition-colors duration-300">
-            <img src="https://via.placeholder.com/48/1DA1F2/FFFFFF?text=X" alt="Twitter" className="w-12 h-12 rounded-lg" />
+          <a href="#" aria-label="GitHub" className="hover:text-[#78dbc4]">
+            <img src="/github.svg" alt="GitHub" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
           </a>
-          <a href="#" className="text-bitqar-dark-green hover:text-bitqar-green transition-colors duration-300">
-            <img src="https://via.placeholder.com/48/24292E/FFFFFF?text=G" alt="GitHub" className="w-12 h-12 rounded-lg" />
+          <a href="#" aria-label="Telegram" className="hover:text-[#78dbc4]">
+            <img src="/telegram.svg" alt="Telegram" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
           </a>
-          {/* Add more social icons as needed */}
+          <a href="#" aria-label="NPM" className="hover:text-[#78dbc4]">
+            <img src="/npm.svg" alt="NPM" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
+          </a>
         </div>
-
-        {/* Gradient image placeholders, mimicking the design */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          <div className="aspect-square bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg shadow-lg"></div>
-          <div className="aspect-square bg-gradient-to-br from-pink-400 to-red-600 rounded-lg shadow-lg"></div>
-          <div className="aspect-square bg-gradient-to-br from-teal-300 to-green-500 rounded-lg shadow-lg"></div>
-          <div className="aspect-square bg-gradient-to-br from-yellow-300 to-orange-500 rounded-lg shadow-lg"></div>
-          <div className="aspect-square bg-gray-800 rounded-lg shadow-lg"></div> {/* Darker placeholder */}
-          <div className="aspect-square bg-gradient-to-br from-purple-500 to-indigo-700 rounded-lg shadow-lg"></div>
+        {/* Grille de photos façon Features */}
+        <div className="pl-0 w-full">
+          {/* Ligne du haut : 2 "photos" (705px et 620px) */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-[55px] w-full mb-[30px] justify-center">
+            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[705px] w-full h-[340px]"></div>
+            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[620px] w-full h-[340px]"></div>
+          </div>
+          {/* Ligne du bas : 3 "photos" (603px, 343px, 344px) */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-[55px] w-full justify-center">
+            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[603px] w-full h-[340px]"></div>
+            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[343px] w-full h-[340px]"></div>
+            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[344px] w-full h-[340px]"></div>
+          </div>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, className
   if (isSpecialCard === '0.5') {
     return (
       <div className={`${base} ${padding} flex flex-col items-center justify-center text-center h-[340px] w-full max-w-[343px]`}>
-        <span className="text-[96px] leading-none font-bold text-bitqar-dark-green">0.5</span>
+        <span className="text-[96px] leading-none font-bold text-bitqar-dark">0.5</span>
         <span className="text-gray-700 text-2xl font-semibold mt-4">Second block times</span>
       </div>
     );
