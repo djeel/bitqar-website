@@ -1,7 +1,20 @@
 // src/components/Header.tsx
 import React from 'react';
 
+import { useState, useEffect } from 'react';
+
 const Header: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Fonction pour vérifier la largeur de l'écran
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // md = 768px
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     // Conserver la position fixe, le fond avec flou et la bordure.
     // Ajout d'un léger box-shadow pour un meilleur effet de profondeur, similaire à ce qu'on voit souvent.
@@ -16,11 +29,9 @@ const Header: React.FC = () => {
         <div className="flex items-center h-full">
           {/* S'assurer que le chemin vers le logo est correct et dans le dossier `public` ou géré par votre bundler. */}
           <img
-            src="/bitqar-logo.svg" // Assurez-vous que ce chemin est correct. Par exemple, si dans public/images, ce serait /images/bitqar-logo.png
-            alt="/bitqar-logo-form.svg"
-            className="h-10 w-auto" // Simplifié : `h-10` (40px) et `w-auto` est suffisant. Le navigateur maintiendra les proportions.
-                                  // `max-h-[40px]` est redondant si `h-10` est déjà défini.
-                                  // `max-w-[180px]` peut être utile si le logo est très large.
+            src={isMobile ? "/bitqar-logo-form.svg" : "/bitqar-logo.svg"}
+            alt={isMobile ? "Bitqar Logo Form" : "Bitqar Logo"}
+            className="h-10 w-auto"
           />
         </div>
         <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
