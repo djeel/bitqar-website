@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-pq-primary border-b border-pq-border shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-lg shadow-lg border-b border-pq-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center space-x-2">
           <WalletIcon className="w-8 h-8 text-pq-accent" />
