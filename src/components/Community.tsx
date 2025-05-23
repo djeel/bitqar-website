@@ -12,7 +12,7 @@ const Community: React.FC = () => {
         }}
       ></div>
       <div className="relative z-10 mx-auto max-w-[1365px] md:text-left pl-0">
-        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-10 leading-tight" style={{ color: '#40757b' }}>
+        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-10 leading-tight" style={{ color: 'dark' }}>
           Join the global community behind Bitqar
         </h2>
         <p className="text-black text-lg md:text-xl mb-6">
@@ -39,14 +39,14 @@ const Community: React.FC = () => {
         <div className="pl-0 w-full">
           {/* Ligne du haut : 2 "photos" (705px et 620px) */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-[55px] w-full mb-[30px] justify-center">
-            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[705px] w-full h-[340px]"></div>
-            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[620px] w-full h-[340px]"></div>
+            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[705px] w-full h-[340px]"></div>
+            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[620px] w-full h-[340px]"></div>
           </div>
           {/* Ligne du bas : 3 "photos" (603px, 343px, 344px) */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-[55px] w-full justify-center">
-            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[603px] w-full h-[340px]"></div>
-            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[343px] w-full h-[340px]"></div>
-            <div className="bg-white rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[344px] w-full h-[340px]"></div>
+            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[603px] w-full h-[340px]"></div>
+            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[343px] w-full h-[340px]"></div>
+            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[344px] w-full h-[340px]"></div>
           </div>
         </div>
       </div>
