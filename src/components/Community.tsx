@@ -1,52 +1,96 @@
+// src/components/Community.tsx
 import React from 'react';
+
+// Il serait bien d'avoir un composant Icône si vous en utilisez beaucoup et voulez gérer le hover de façon centralisée.
+// Pour l'instant, nous allons garder les <img>.
+// interface SocialIconProps {
+//   href: string;
+//   label: string;
+//   iconSrc: string;
+//   iconAlt: string;
+// }
+
+// const SocialLink: React.FC<SocialIconProps> = ({ href, label, iconSrc, iconAlt }) => (
+//   <a
+//     href={href}
+//     aria-label={label}
+//     target="_blank" // Ouvre les liens sociaux dans un nouvel onglet
+//     rel="noopener noreferrer" // Pour la sécurité avec target="_blank"
+//     className="text-gray-700 hover:opacity-75 transition-opacity duration-200" // Changement d'opacité au survol comme effet simple
+//   >
+//     <img src={iconSrc} alt={iconAlt} className="w-10 h-10 md:w-12 md:h-12" /> {/* Taille ajustée, pas besoin de filter: invert(0) */}
+//   </a>
+// );
 
 const Community: React.FC = () => {
   return (
     <section id="community" className="relative py-16 md:py-24 bg-bitqar-bg-light px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Gradient background Figma */}
+      {/* Fond avec gradient */}
       <div
-        className="absolute left-0 right-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"
+        className="absolute inset-x-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"
+        // Si #78dbc4 est une couleur de votre thème (ex: 'bitqar-primary'), vous pourriez la référencer ici.
+        // L'opacité peut aussi être gérée via la couleur RGBA dans le gradient si supporté, ou via une classe d'opacité Tailwind sur cet élément.
         style={{
-          background: 'linear-gradient(90deg, rgba(0,0,0,0) 0%, #78dbc4 100%)',
-          opacity: 0.4,
+          background: 'linear-gradient(90deg, rgba(0,0,0,0) 0%, #78dbc4 100%)', // Couleur directement
+          opacity: 0.3, // Légère réduction de l'opacité pour être plus subtil
         }}
-      ></div>
-      <div className="relative z-10 mx-auto max-w-[1365px] md:text-left pl-0">
-        <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-10 leading-tight" style={{ color: 'dark' }}>
-          Join the global community behind Bitqar
-        </h2>
-        <p className="text-black text-lg md:text-xl mb-6">
-          With a thriving community of members worldwide, Bitqar is backed by passionate <br className="hidden md:block"/> supporters driving the future of blockchain technology. Connect, collaborate, and grow <br className="hidden md:block"/> with us as we shape the next generation of decentralized solutions.
-        </p>
-        <p className="text-black text-xl md:text-2xl font-semibold mb-6">
-          Join the Bitqar community today.
-        </p>
-        <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-6 items-center md:items-start mb-10 md:mb-12 justify-center md:justify-start">
-          <a href="#" aria-label="Discord" className="hover:text-[#78dbc4]">
-            <img src="/discord.svg" alt="Discord" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
+      />
+
+      {/* Contenu principal */}
+      <div className="relative z-10 mx-auto max-w-screen-xl"> {/* max-w-screen-xl pour la cohérence */}
+        <div className="md:text-left mb-12 md:mb-16"> {/* Ajout d'un conteneur pour le texte pour un meilleur contrôle de la largeur si besoin */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-bitqar-text-dark mb-6 md:mb-8 leading-tight"> {/* Utilisation de text-bitqar-text-dark ou une autre couleur définie dans Tailwind */}
+            Join the global community behind Bitqar
+          </h2>
+          <p className="text-gray-700 text-lg md:text-xl mb-6 leading-relaxed"> {/* Couleur de texte adoucie, leading-relaxed pour l'interligne */}
+            With a thriving community of members worldwide, Bitqar is backed by passionate
+            <br className="hidden md:block" /> supporters driving the future of blockchain technology. Connect, collaborate, and grow
+            <br className="hidden md:block" /> with us as we shape the next generation of decentralized solutions.
+          </p>
+          <p className="text-gray-800 text-xl md:text-2xl font-semibold mb-8 md:mb-10"> {/* Couleur et marge ajustées */}
+            Join the Bitqar community today.
+          </p>
+        </div>
+
+        {/* Icônes des réseaux sociaux */}
+        {/* `justify-center` sur mobile, `md:justify-start` sur desktop */}
+        <div className="flex flex-wrap gap-5 md:gap-6 items-center justify-center md:justify-start mb-12 md:mb-16">
+          {/* Note sur les icônes :
+              - `filter: invert(0)` ne fait rien. Si vos icônes SVG sont noires et que vous voulez les colorer avec du texte (via currentColor),
+                elles doivent être intégrées comme des composants React (SVG inline) et leur `fill` ou `stroke` mis à `currentColor`.
+              - Le `hover:text-[#78dbc4]` sur le <a> n'affectera pas la couleur de <img>.
+              - Pour un effet de survol simple sur l'icône <img>, on peut jouer sur l'opacité du <a> ou un scale.
+          */}
+          <a href="#" aria-label="Discord" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
+            <img src="/discord.svg" alt="Discord" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
-          <a href="#" aria-label="GitHub" className="hover:text-[#78dbc4]">
-            <img src="/github.svg" alt="GitHub" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
+          <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
+            <img src="/github.svg" alt="GitHub" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
-          <a href="#" aria-label="Telegram" className="hover:text-[#78dbc4]">
-            <img src="/telegram.svg" alt="Telegram" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
+          <a href="#" aria-label="Telegram" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
+            <img src="/telegram.svg" alt="Telegram" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
-          <a href="#" aria-label="NPM" className="hover:text-[#78dbc4]">
-            <img src="/npm.svg" alt="NPM" className="w-12 h-12 transition-colors duration-300" style={{ filter: 'invert(0)' }} />
+          <a href="#" aria-label="NPM" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
+            {/* Assurez-vous que npm.svg est pertinent pour une "communauté" ou si c'est pour les développeurs */}
+            <img src="/npm.svg" alt="NPM" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
         </div>
-        {/* Grille de photos façon Features */}
-        <div className="pl-0 w-full">
-          {/* Ligne du haut : 2 "photos" (705px et 620px) */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-[55px] w-full mb-[30px] justify-center">
-            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[705px] w-full h-[340px]"></div>
-            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[620px] w-full h-[340px]"></div>
+
+        {/* Grille de "photos" - utilisant CSS Grid pour la réactivité */}
+        <div className="w-full">
+          {/* Ligne du haut : responsive grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full mb-6 md:mb-8 lg:mb-10">
+            {/* Remplacer h-[340px] par aspect-video ou aspect-square pour un ratio responsive, ou laisser la hauteur s'adapter au contenu si ce sont de vraies images */}
+            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video">
+              {/* Contenu de la "photo" ici, ex: <img src="..." className="w-full h-full object-cover" /> */}
+            </div>
+            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
           </div>
-          {/* Ligne du bas : 3 "photos" (603px, 343px, 344px) */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-[55px] w-full justify-center">
-            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[603px] w-full h-[340px]"></div>
-            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[343px] w-full h-[340px]"></div>
-            <div className="bg-[#78dbc4]/30 rounded-[30px] shadow-lg border border-[#78dbc4] backdrop-blur-[10px] overflow-hidden max-w-[344px] w-full h-[340px]"></div>
+          {/* Ligne du bas : responsive grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 w-full">
+            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
+            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
+            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
           </div>
         </div>
       </div>
