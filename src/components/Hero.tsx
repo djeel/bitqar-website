@@ -38,7 +38,7 @@ const randomChar = () => {
 const DecodeText: React.FC<DecodeTextProps & { minWidth?: number }> = ({
   text,
   className = '',
-  speed = 40, // vitesse du scramble (ms)
+  speed = 10, // vitesse du scramble (ms)
   minWidth,
 }) => {
   const [display, setDisplay] = useState<string[]>(() => text.split('').map(c => (c === ' ' ? ' ' : randomChar())));
