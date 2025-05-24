@@ -1,0 +1,43 @@
+/* Bandeau défilant horizontal infini */
+.slideshow {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  height: 300px;
+}
+.images {
+  display: flex;
+  width: max-content;
+  animation: scroll-horizontal 22s linear infinite;
+  will-change: transform;
+  align-items: center;
+  overflow: visible;
+}
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.photo {
+  min-width: 420px;
+  aspect-ratio: 16/9;
+  border-radius: 30px;
+  margin-right: 2rem;
+  object-fit: cover;
+  box-shadow: 0 8px 32px 0 rgba(120,219,196,0.11);
+  border: 1.5px solid #78dbc4;
+  background: rgba(120,219,196,0.13);
+  backdrop-filter: blur(4px);
+  transition: transform .25s;
+  position: relative;
+  z-index: 1;
+}
+.photo:hover {
+  transform: scale(1.04);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .photo { min-width: 240px; }
+  .slideshow { height: 180px; }
+  .images { gap: 0.5rem; }
+}

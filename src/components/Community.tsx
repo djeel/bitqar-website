@@ -1,5 +1,6 @@
 // src/components/Community.tsx
 import React from 'react';
+import './Community.css';
 
 // Il serait bien d'avoir un composant Icône si vous en utilisez beaucoup et voulez gérer le hover de façon centralisée.
 // Pour l'instant, nous allons garder les <img>.
@@ -76,21 +77,32 @@ const Community: React.FC = () => {
           </a>
         </div>
 
-        {/* Grille de "photos" - utilisant CSS Grid pour la réactivité */}
-        <div className="w-full">
-          {/* Ligne du haut : responsive grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full mb-6 md:mb-8 lg:mb-10">
-            {/* Remplacer h-[340px] par aspect-video ou aspect-square pour un ratio responsive, ou laisser la hauteur s'adapter au contenu si ce sont de vraies images */}
-            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video">
-              {/* Contenu de la "photo" ici, ex: <img src="..." className="w-full h-full object-cover" /> */}
-            </div>
-            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
+        {/* Bande défilante du haut (scroll lent) */}
+        <div className="slideshow mb-0">
+          <div className="images" style={{animationDuration: '42s'}}>
+            {[1,2,3,4,5,6,1,2,3,4,5,6].map((i,idx) => (
+              <img
+                src={`/community${i}.jpg`}
+                alt={``}
+                className="photo"
+                key={"row1-"+idx}
+                loading="lazy"
+              />
+            ))}
           </div>
-          {/* Ligne du bas : responsive grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 w-full">
-            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
-            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
-            <div className="bg-[#78dbc4]/20 rounded-[30px] shadow-xl border border-[#78dbc4]/50 backdrop-blur-sm overflow-hidden aspect-video"></div>
+        </div>
+        {/* Bande défilante du bas (scroll rapide) */}
+        <div className="slideshow">
+          <div className="images" style={{animationDuration: '60s'}}>
+            {[6,5,4,3,2,1,6,5,4,3,2,1].map((i,idx) => (
+              <img
+                src={`/community${i}.jpg`}
+                alt={``}
+                className="photo"
+                key={"row2-"+idx}
+                loading="lazy"
+              />
+            ))}
           </div>
         </div>
       </div>
