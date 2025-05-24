@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
     >
       <div className="relative z-10 p-4">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-          <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "post-quantum security", "decentralized future", "AI-powered ledger"]} className="text-bitqar-text-dark" speed={70} />
+          <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "post-quantum security", "decentralized layer", "AI-powered ledger"]} className="text-bitqar-text-dark" speed={70} />
         </h1>
       </div>
     </section>
@@ -35,10 +35,11 @@ const randomChar = () => {
   return chars[Math.floor(Math.random() * chars.length)];
 };
 
-const DecodeText: React.FC<DecodeTextProps> = ({
+const DecodeText: React.FC<DecodeTextProps & { minWidth?: number }> = ({
   text,
   className = '',
   speed = 40, // vitesse du scramble (ms)
+  minWidth,
 }) => {
   const [display, setDisplay] = useState<string[]>(() => text.split('').map(c => (c === ' ' ? ' ' : randomChar())));
   const [revealIndex, setRevealIndex] = useState(0);
@@ -98,7 +99,10 @@ const DecodeText: React.FC<DecodeTextProps> = ({
   }, [revealIndex, text]);
 
   return (
-    <span className={className}>
+    <span
+      className={className}
+      style={minWidth ? { display: 'inline-block', minWidth: `${minWidth}ch` } : {}}
+    >
       {display.map((char, i) =>
         char === ' ' ? (
           <span key={i} className="decode-space">&nbsp;</span>
@@ -133,6 +137,8 @@ const RotatingDecodeText: React.FC<RotatingDecodeTextProps> = ({
   speed = 40,
   duration = 9000,
 }) => {
+  // Calcule la longueur max pour fixer la largeur
+  const maxLen = Math.max(...texts.map(t => t.length));
   const [idx, setIdx] = useState(0);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -140,7 +146,7 @@ const RotatingDecodeText: React.FC<RotatingDecodeTextProps> = ({
     }, duration);
     return () => clearTimeout(timer);
   }, [idx, texts.length, duration]);
-  return <DecodeText text={texts[idx]} className={className} speed={speed} />;
+  return <DecodeText text={texts[idx]} className={className} speed={speed} minWidth={maxLen} />;
 };
 
 export default Hero;
