@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -67,8 +68,11 @@ const MouseSpotlight: React.FC = () => {
 };
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <div className="min-h-screen flex flex-col relative">
+      {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
       {/* Gradient de fond global */}
       <div className="fixed inset-0 -z-10 pointer-events-none" style={{
         background: 'linear-gradient(135deg, #78dbc4 0%, #eafffa 50%, #fff 100%)',

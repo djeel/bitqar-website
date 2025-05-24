@@ -1,0 +1,87 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #407569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.loading-screen.animate {
+  animation: loading-fade 2s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+@keyframes loading-fade {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.logo-mask {
+  width: 120px;
+  height: 120px;
+  background: white;
+  mask-image: url('/bitqar-logo-form.svg');
+  -webkit-mask-image: url('/bitqar-logo-form.svg');
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  pointer-events: none;
+  opacity: 1;
+  transition: none;
+}
+
+.logo-mask.animate {
+  animation: logo-reveal 2s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+@keyframes logo-reveal {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(40);
+    opacity: 0;
+  }
+}
+
+.loading-logo {
+  width: 120px;
+  height: 120px;
+  transition: none;
+  pointer-events: none;
+  filter: brightness(0) invert(1); /* logo blanc */
+  mix-blend-mode: screen;
+}
+
+.loading-logo.animate {
+  animation: logo-grow 0.6s cubic-bezier(.8,0,.2,1) forwards;
+}
+
+@keyframes logo-grow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(12);
+    opacity: 0;
+  }
+}
