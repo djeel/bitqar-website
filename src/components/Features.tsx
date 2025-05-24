@@ -143,8 +143,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, className
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className="py-16 md:py-24 bg-transparent px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-screen-xl flex flex-col items-center"> {/* `max-w-screen-xl` est une bonne pratique */}
+    <section id="features" className="relative py-16 md:py-24 bg-transparent px-4 sm:px-6 lg:px-8">
+  {/* Overlay flou et semi-transparent pour un effet uniforme sous le header */}
+  <div
+    className="absolute inset-0 z-0 pointer-events-none"
+    style={{
+      background: 'rgba(255,255,255,0.5)',
+      backdropFilter: 'blur(1px)',
+      WebkitBackdropFilter: 'blur(1px)',
+    }}
+  />
+      <div className="relative z-10 mx-auto max-w-screen-xl flex flex-col items-center"> {/* `max-w-screen-xl` est une bonne pratique */}
         <h2 className="text-4xl md:text-5xl font-bold text-bitqar-text-dark mb-12 md:mb-16 leading-tight text-center">
           The L1 Quantum Blockchain with <br className="hidden md:block" /> Endless Potential
         </h2>

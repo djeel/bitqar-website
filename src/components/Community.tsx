@@ -26,6 +26,15 @@ import './Community.css';
 const Community: React.FC = () => {
   return (
     <section id="community" className="relative py-16 md:py-24 bg-bitqar-bg-light px-4 sm:px-6 lg:px-8 overflow-hidden">
+  {/* Overlay flou et semi-transparent pour un effet uniforme sous le header */}
+  <div
+    className="absolute inset-0 z-0 pointer-events-none"
+    style={{
+      background: 'rgba(255,255,255,0.5)',
+      backdropFilter: 'blur(1px)',
+      WebkitBackdropFilter: 'blur(1px)',
+    }}
+  />
       {/* Fond avec gradient */}
       <div
         className="absolute inset-x-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"

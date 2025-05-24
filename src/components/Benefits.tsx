@@ -3,6 +3,15 @@ import React from 'react';
 const Benefits: React.FC = () => {
   return (
     <section id="benefits" className="relative py-16 md:py-24 bg-transparent px-4 sm:px-6 lg:px-8 overflow-hidden">
+  {/* Overlay flou et semi-transparent harmonisé */}
+  <div
+    className="absolute inset-0 z-0 pointer-events-none"
+    style={{
+      background: 'rgba(255,255,255,0.5)',
+      backdropFilter: 'blur(1px)',
+      WebkitBackdropFilter: 'blur(1px)',
+    }}
+  />
       {/* Gradient background Figma */}
       <div
         className="absolute left-0 right-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"
@@ -21,7 +30,7 @@ const Benefits: React.FC = () => {
           backdropFilter: 'blur(4px)',
         }}
       ></div>
-      <div className="relative z-20 container mx-auto text-center max-w-5xl">
+      <div className="relative z-10 container mx-auto text-center max-w-5xl">
         <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight" style={{ color: '#40757b' }}>
           Reinventing the Layer 1 Blockchain
         </h2>

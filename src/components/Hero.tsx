@@ -5,12 +5,22 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center text-center bg-transparent overflow-hidden px-4 sm:px-6 lg:px-8"
-      // Based on hero.jpg, it's a subtle gradient rather than a direct image background.
-      // If the image itself is a gradient, this is better.
-      // If it's a more complex graphic, consider it as an actual background image.
-      // For now, I'll use a gradient that mimics the provided image.
-    >
+      className="relative h-screen flex items-center justify-center text-center bg-transparent overflow-hidden px-4 sm:px-6 lg:px-8">
+      {/* Overlay flou et semi-transparent harmonisé */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background: 'rgba(255,255,255,0.5)',
+          backdropFilter: 'blur(1px)',
+          WebkitBackdropFilter: 'blur(1px)',
+        }}
+      />
+      {/*
+        Based on hero.jpg, it's a subtle gradient rather than a direct image background.
+        If the image itself is a gradient, this is better.
+        If it's a more complex graphic, consider it as an actual background image.
+        For now, I'll use a gradient that mimics the provided image.
+      */}
       <div className="relative z-10 p-4">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
           <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "post-quantum security", "decentralized layer", "AI-powered ledger"]} className="text-bitqar-text-dark" speed={70} />
