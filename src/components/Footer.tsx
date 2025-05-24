@@ -15,24 +15,24 @@ const Footer: React.FC = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-12 gap-y-4 text-sm md:text-base">
           <nav className="flex flex-col space-y-2">
-            <a href="#home" className="hover:text-bitqar-green transition-colors duration-200">Home</a>
-            <a href="#about" className="hover:text-bitqar-green transition-colors duration-200">About</a>
-            <a href="#developers" className="hover:text-bitqar-green transition-colors duration-200">Developers</a>
-            <a href="#wallet" className="hover:text-bitqar-green transition-colors duration-200">Wallet</a>
+            <a href="#home" className="fade-link">Home</a>
+            <a href="#about" className="fade-link">About</a>
+            <a href="#developers" className="fade-link">Developers</a>
+            <a href="#wallet" className="fade-link">Wallet</a>
           </nav>
           <nav className="flex flex-col space-y-2">
-            <a href="#status" className="hover:text-bitqar-green transition-colors duration-200">Status</a>
-            <a href="#blockchain" className="hover:text-bitqar-green transition-colors duration-200">Blockchain</a>
-            <a href="#contact" className="hover:text-bitqar-green transition-colors duration-200">Contact</a>
+            <a href="#status" className="fade-link">Status</a>
+            <a href="#blockchain" className="fade-link">Blockchain</a>
+            <a href="#contact" className="fade-link">Contact</a>
           </nav>
           <nav className="flex flex-col space-y-2">
-            <a href="#terms" className="hover:text-bitqar-green transition-colors duration-200">Terms of service</a>
-            <a href="#privacy" className="hover:text-bitqar-green transition-colors duration-200">Privacy Policy</a>
-            <a href="#cookie" className="hover:text-bitqar-green transition-colors duration-200">Cookie Preferences</a>
+            <a href="#terms" className="fade-link">Terms of service</a>
+            <a href="#privacy" className="fade-link">Privacy Policy</a>
+            <a href="#cookie" className="fade-link">Cookie Preferences</a>
           </nav>
           <nav className="flex flex-col space-y-2">
-            <a href="#announcements" className="hover:text-bitqar-green transition-colors duration-200">Announcements</a>
-            <a href="#blog" className="hover:text-bitqar-green transition-colors duration-200">Blog</a>
+            <a href="#announcements" className="fade-link">Announcements</a>
+            <a href="#blog" className="fade-link">Blog</a>
           </nav>
         </div>
       </div>

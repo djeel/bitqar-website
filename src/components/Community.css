@@ -36,6 +36,26 @@
   z-index: 10;
 }
 
+
+/* Utilitaire pour effet de fade in/out et hover premium sur liens et logo */
+.fade-link {
+  transition: color 350ms cubic-bezier(.22,1,.36,1), filter 350ms cubic-bezier(.22,1,.36,1), opacity 350ms cubic-bezier(.22,1,.36,1);
+  opacity: 1;
+}
+.fade-link:hover, .fade-link:focus {
+  color: #407569 !important;
+  opacity: 0.7;
+}
+.fade-link img,
+img.fade-link {
+  transition: filter 350ms cubic-bezier(.22,1,.36,1), opacity 350ms cubic-bezier(.22,1,.36,1);
+}
+.fade-link:hover img,
+img.fade-link:hover {
+  filter: invert(33%) sepia(16%) saturate(1037%) hue-rotate(124deg) brightness(96%) contrast(87%);
+  opacity: 0.7;
+}
+
 @media (max-width: 768px) {
   .photo { min-width: 240px; }
   .slideshow { height: 180px; }
