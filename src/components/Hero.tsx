@@ -1,4 +1,5 @@
-import React from 'react';  
+import React from 'react';
+import './Hero.css';
 
 const Hero: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Hero: React.FC = () => {
     >
       <div className="relative z-10 p-4">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-          <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "post-quantum security", "decentralized future", "AI-powered ledger"]} className="text-bitqar-text-dark" />
+          <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "post-quantum security", "decentralized future", "AI-powered ledger"]} className="text-bitqar-text-dark" speed={70} />
         </h1>
       </div>
     </section>
@@ -26,11 +27,11 @@ interface DecodeTextProps {
   text: string;
   className?: string;
   speed?: number; // ms entre chaque lettre révélée
-  randomization?: number; // nombre de cycles de random avant de fixer une lettre
 }
 
 const randomChar = () => {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=<>?';
+  // Lettres latines, chiffres, symboles, caractères chinois et russes populaires
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=<>?абвгдеёжзийклмнопрстуфхцчшщъыьэюя你好世界区块链安全未来人工智能数据加密';
   return chars[Math.floor(Math.random() * chars.length)];
 };
 
@@ -38,7 +39,6 @@ const DecodeText: React.FC<DecodeTextProps> = ({
   text,
   className = '',
   speed = 40, // vitesse du scramble (ms)
-  randomization = 6, // inutilisé ici mais laissé pour compatibilité
 }) => {
   const [display, setDisplay] = useState<string[]>(() => text.split('').map(c => (c === ' ' ? ' ' : randomChar())));
   const [revealIndex, setRevealIndex] = useState(0);
@@ -73,7 +73,7 @@ const DecodeText: React.FC<DecodeTextProps> = ({
   // Révèle les lettres de gauche à droite, timing aléatoire
   useEffect(() => {
     if (revealIndex < text.length) {
-      const nextDelay = 60 + Math.random() * 110; // entre 60ms et 170ms
+      const nextDelay = 120 + Math.random() * 100; // entre 120ms et 220ms
       revealTimeout.current = setTimeout(() => {
         // Skip les espaces
         let next = revealIndex + 1;
@@ -97,7 +97,24 @@ const DecodeText: React.FC<DecodeTextProps> = ({
     };
   }, [revealIndex, text]);
 
-  return <span className={className}>{display.join('')}</span>;
+  return (
+    <span className={className}>
+      {display.map((char, i) =>
+        char === ' ' ? (
+          <span key={i} className="decode-space">&nbsp;</span>
+        ) : (
+          <span
+            key={i}
+            className={
+              'decode-fade ' + (i < revealIndex ? 'decode-revealed' : 'decode-scramble')
+            }
+          >
+            {char}
+          </span>
+        )
+      )}
+    </span>
+  );
 };
 
 // RotatingDecodeText : alterne entre plusieurs textes avec l'effet DecodeText
@@ -114,8 +131,7 @@ const RotatingDecodeText: React.FC<RotatingDecodeTextProps> = ({
   texts,
   className = '',
   speed = 40,
-  randomization = 6,
-  duration = 4000,
+  duration = 9000,
 }) => {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -124,7 +140,7 @@ const RotatingDecodeText: React.FC<RotatingDecodeTextProps> = ({
     }, duration);
     return () => clearTimeout(timer);
   }, [idx, texts.length, duration]);
-  return <DecodeText text={texts[idx]} className={className} speed={speed} randomization={randomization} />;
+  return <DecodeText text={texts[idx]} className={className} speed={speed} />;
 };
 
 export default Hero;

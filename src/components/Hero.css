@@ -1,0 +1,18 @@
+.decode-fade {
+  display: inline-block;
+  transition: opacity 0.55s cubic-bezier(.22,1,.36,1), filter 0.55s cubic-bezier(.22,1,.36,1);
+}
+.decode-scramble {
+  opacity: 0.18;
+  filter: blur(1.2px) contrast(2) brightness(1.25) grayscale(0.25);
+  color: #2b5d5b;
+}
+.decode-revealed {
+  opacity: 1;
+  filter: none;
+  color: inherit;
+}
+.decode-space {
+  display: inline-block;
+  width: 0.6em;
+}
