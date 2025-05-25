@@ -30,8 +30,8 @@
   width: 120px;
   height: 120px;
   background: white;
-  mask-image: url('/bitqar-logo-form.svg');
-  -webkit-mask-image: url('/bitqar-logo-form.svg');
+  mask-image: url('../assets/bitqar-logo-form.svg');
+  -webkit-mask-image: url('../assets/bitqar-logo-form.svg');
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: center;

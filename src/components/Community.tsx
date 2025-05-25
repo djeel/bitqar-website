@@ -1,6 +1,10 @@
 // src/components/Community.tsx
 import React from 'react';
 import './Community.css';
+import discordIcon from '../assets/discord.svg';
+import githubIcon from '../assets/github.svg';
+import telegramIcon from '../assets/telegram.svg';
+import npmIcon from '../assets/npm.svg';
 
 // Il serait bien d'avoir un composant Icône si vous en utilisez beaucoup et voulez gérer le hover de façon centralisée.
 // Pour l'instant, nous allons garder les <img>.
@@ -72,17 +76,17 @@ const Community: React.FC = () => {
               - Pour un effet de survol simple sur l'icône <img>, on peut jouer sur l'opacité du <a> ou un scale.
           */}
           <a href="#" aria-label="Discord" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
-            <img src="/discord.svg" alt="Discord" className="w-10 h-10 md:w-12 md:h-12" />
+            <img src={discordIcon} alt="Discord" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
           <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
-            <img src="/github.svg" alt="GitHub" className="w-10 h-10 md:w-12 md:h-12" />
+            <img src={githubIcon} alt="GitHub" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
           <a href="#" aria-label="Telegram" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
-            <img src="/telegram.svg" alt="Telegram" className="w-10 h-10 md:w-12 md:h-12" />
+            <img src={telegramIcon} alt="Telegram" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
           <a href="#" aria-label="NPM" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
             {/* Assurez-vous que npm.svg est pertinent pour une "communauté" ou si c'est pour les développeurs */}
-            <img src="/npm.svg" alt="NPM" className="w-10 h-10 md:w-12 md:h-12" />
+            <img src={npmIcon} alt="NPM" className="w-10 h-10 md:w-12 md:h-12" />
           </a>
         </div>
 

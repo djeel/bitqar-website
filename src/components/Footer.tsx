@@ -1,4 +1,5 @@
 import React from 'react';
+import bitqarLogoPng from '../assets/bitqar-logo.png';
 
 const Footer: React.FC = () => {
   return (
@@ -6,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left">
         <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
           <div className="flex items-center mb-2">
-            <img src="/bitqar-logo.png" alt="Bitqar Logo" className="h-8 md:h-10 invert brightness-0" /> {/* invert for white logo */}
+            <img src={bitqarLogoPng} alt="Bitqar Logo" className="h-8 md:h-10 invert brightness-0" /> {/* invert for white logo */}
           </div>
           <p className="text-gray-400 text-sm mt-4">
             © Bitqar Foundation. All right reserved.

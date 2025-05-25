@@ -1,6 +1,7 @@
 // src/components/Header.tsx
 import React from 'react';
-
+import bitqarLogo from '../assets/bitqar-logo.svg';
+import bitqarLogoForm from '../assets/bitqar-logo-form.svg';
 import { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
         <div className="flex items-center h-full">
           {/* S'assurer que le chemin vers le logo est correct et dans le dossier `public` ou géré par votre bundler. */}
           <img
-            src={isMobile ? "/bitqar-logo-form.svg" : "/bitqar-logo.svg"}
+            src={isMobile ? bitqarLogoForm : bitqarLogo}
             alt={isMobile ? "Bitqar Logo Form" : "Bitqar Logo"}
             className="h-10 w-auto fade-link"
 
