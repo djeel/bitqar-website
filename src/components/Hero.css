@@ -17,3 +17,11 @@
   display: inline-block;
   width: 0.6em;
 }
+
+@media (max-width: 600px) {
+  .text-bitqar-text-dark {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
