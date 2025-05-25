@@ -1,6 +1,10 @@
 # Bitqar Website
 
-A modern, clean and aesthetic landing page for the Bitqar project.
+Welcome to the official website of **Bitqar** !
+
+Bitqar is an innovative project that aims to offer a modern, transparent, and accessible community platform, dedicated to exchange, discovery, and the valorization of responsible digital solutions. Our website offers an immersive and elegant experience, designed to highlight our values: simplicity, openness, solidarity, and technological excellence.
+
+This website serves as a showcase for the Bitqar project, allowing everyone to discover its features, benefits, and join the community. It was designed to offer a smooth navigation experience, interactive animations, and a responsive design adapted to all devices.
 
 ---
 
