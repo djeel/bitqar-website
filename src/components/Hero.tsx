@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
       */}
       <div className="relative z-10 p-4">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-          <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "post-quantum security", "decentralized layer", "AI-powered ledger"]} className="text-bitqar-text-dark" speed={70} />
+          <span className="text-[#78dbc4]">Bitqar:</span> <span className="text-bitqar-text-dark">future of</span> <br className="hidden md:block"/> <RotatingDecodeText texts={["quantum blockchain", "quantum blockchain", "quantum blockchain", "quantum blockchain"]} className="text-bitqar-text-dark" speed={70} />
         </h1>
       </div>
     </section>
