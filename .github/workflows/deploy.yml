@@ -23,6 +23,9 @@ jobs:
       - name: Ensure vite is executable
         run: npm install vite@latest --force
 
+      - name: Clean dist
+        run: rm -rf dist
+
       - name: Build
         run: node node_modules/vite/bin/vite.js build
 
