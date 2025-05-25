@@ -1,11 +1,12 @@
 // src/components/Header.tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import bitqarLogo from '../assets/bitqar-logo.svg';
 import bitqarLogoForm from '../assets/bitqar-logo-form.svg';
-import { useState, useEffect } from 'react';
+import HeaderMenuMobile from './HeaderMenuMobile';
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Fonction pour vérifier la largeur de l'écran
@@ -17,9 +18,8 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   return (
-    // Conserver la position fixe, le fond avec flou et la bordure.
-    // Ajout d'un léger box-shadow pour un meilleur effet de profondeur, similaire à ce qu'on voit souvent.
-    <header className="fixed top-0 left-0 w-full h-[80px] bg-white/80 backdrop-blur-md border-b border-gray-200 z-50 shadow-sm">
+    <>
+      <header className="fixed top-0 left-0 w-full h-[80px] bg-white/80 backdrop-blur-md border-b border-gray-200 z-50 shadow-sm">
       {/* Le conteneur principal pour centrer le contenu.
           Votre `max-w-[calc(100vw-860px)]` est une approche intéressante mais peut être complexe.
           Une approche plus courante est d'utiliser des breakpoints standards ou une largeur maximale fixe.
@@ -72,10 +72,10 @@ const Header: React.FC = () => {
             Vous aurez besoin d'un état pour gérer l'ouverture/fermeture et d'un composant de menu mobile.
         */}
         <div className="md:hidden">
-          {/* Exemple de bouton de menu burger simple (icône à ajouter) */}
           <button
             aria-label="Ouvrir le menu principal"
             className="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-bitqar-dark fade-link"
+            onClick={() => setMenuOpen(true)}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -84,6 +84,8 @@ const Header: React.FC = () => {
         </div>
       </div>
     </header>
+    <HeaderMenuMobile open={menuOpen} onClose={() => setMenuOpen(false)} />
+    </>
   );
 };
 

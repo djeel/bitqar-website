@@ -1,8 +1,8 @@
 .decode-fade {
   display: inline-block;
   transition: opacity 0.55s cubic-bezier(.22,1,.36,1), filter 0.55s cubic-bezier(.22,1,.36,1);
-  font-family: 'SK-Modernist Mono', 'Fira Mono', 'Consolas', 'Menlo', 'monospace';
 }
+
 .decode-scramble {
   opacity: 0.18;
   filter: blur(1.2px) contrast(2) brightness(1.25) grayscale(0.25);
