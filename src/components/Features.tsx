@@ -1,5 +1,6 @@
 // src/components/Features.tsx
 import React from "react";
+import card5 from '../assets/card5.svg';
 
 interface FeatureCardProps {
   title?: string;
@@ -97,7 +98,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, className
         className={`${baseStyles} relative overflow-hidden flex flex-col items-end justify-end aspect-square w-full p-0 ${className || ''}`}
         style={{
           borderRadius: '30px', // Tailwind `rounded-[30px]` est prioritaire si appliqué au même élément
-          backgroundImage: `url('/card5.svg')`, // Assurez-vous que le chemin est correct
+          backgroundImage: `url(${card5})`, // Utilise l'import JS/TS
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',

@@ -5,6 +5,13 @@ import discordIcon from '../assets/discord.svg';
 import githubIcon from '../assets/github.svg';
 import telegramIcon from '../assets/telegram.svg';
 import npmIcon from '../assets/npm.svg';
+import community1 from '../assets/community1.jpg';
+import community2 from '../assets/community2.jpg';
+import community3 from '../assets/community3.jpg';
+import community4 from '../assets/community4.jpg';
+import community5 from '../assets/community5.jpg';
+import community6 from '../assets/community6.jpg';
+const communityImages = [community1, community2, community3, community4, community5, community6];
 
 // Il serait bien d'avoir un composant Icône si vous en utilisez beaucoup et voulez gérer le hover de façon centralisée.
 // Pour l'instant, nous allons garder les <img>.
@@ -95,7 +102,7 @@ const Community: React.FC = () => {
           <div className="images" style={{animationDuration: '42s'}}>
             {[1,2,3,4,5,6,1,2,3,4,5,6].map((i,idx) => (
               <img
-                src={`/community${i}.jpg`}
+                src={communityImages[(i-1)%6]}
                 alt={``}
                 className="photo"
                 key={"row1-"+idx}
@@ -109,7 +116,7 @@ const Community: React.FC = () => {
           <div className="images" style={{animationDuration: '60s'}}>
             {[6,5,4,3,2,1,6,5,4,3,2,1].map((i,idx) => (
               <img
-                src={`/community${i}.jpg`}
+                src={communityImages[(i-1)%6]}
                 alt={``}
                 className="photo"
                 key={"row2-"+idx}
