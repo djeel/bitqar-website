@@ -2,10 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/bitqar-website/bitqar-logo-form.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" crossorigin src="/bitqar-website/assets/index-CZHCbn5r.js"></script>
-    <link rel="stylesheet" crossorigin href="/bitqar-website/assets/index--B-TOyF6.css">
+    <meta name="theme-color" content="#04080A" />
+    <meta name="description" content="Bitqar — the L1 quantum-resistant blockchain. Post-quantum security, 0.5s block times, single-slot finality, 100% EVM compatible." />
+    <title>Bitqar — The L1 Quantum Blockchain</title>
+    <script>
+      (function () {
+        try {
+          var d = document.documentElement;
+          var t = localStorage.getItem('bitqar-theme');
+          d.dataset.theme = t === 'light' ? 'light' : 'dark';
+          d.dataset.js = 'true';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/bitqar-website/assets/index-oTRlFfy0.js"></script>
+    <link rel="stylesheet" crossorigin href="/bitqar-website/assets/index-D9Ahnfwa.css">
   </head>
   <body>
     <div id="root"></div>
