@@ -1,42 +1,57 @@
-import React from 'react';
-import bitqarLogoPng from '../assets/bitqar-logo.png';
+import Reveal from './fx/Reveal';
+import Magnetic from './fx/Magnetic';
+import bitqarLogo from '../assets/bitqar-logo.svg';
+import styles from './Footer.module.css';
+
+const columns = [
+  { title: 'Protocol', links: ['Home', 'Technology', 'Network', 'Whitepaper'] },
+  { title: 'Developers', links: ['Documentation', 'GitHub', 'SDK', 'Status'] },
+  { title: 'Company', links: ['About', 'Blog', 'Privacy', 'Terms'] },
+];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white py-12 md:py-16 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left">
-        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-          <div className="flex items-center mb-2">
-            <img src={bitqarLogoPng} alt="Bitqar Logo" className="h-8 md:h-10 invert brightness-0" /> {/* invert for white logo */}
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <Reveal className={styles.cta}>
+          <h2 className={`${styles.ctaTitle} reveal-line`}>
+            <span>Ready to build the <em>post-quantum</em> future?</span>
+          </h2>
+          <div className={`${styles.ctaActions} reveal-up`}>
+            <Magnetic>
+              <a href="#community" className="btn-pill">Launch App <span aria-hidden="true">→</span></a>
+            </Magnetic>
+            <a href="#network" className="btn-ghost">Read the docs</a>
           </div>
-          <p className="text-gray-400 text-sm mt-4">
-            © Bitqar Foundation. All right reserved.
-          </p>
+        </Reveal>
+
+        <div className={styles.cols}>
+          <div className={styles.brand}>
+            <img src={bitqarLogo} alt="Bitqar" className={styles.logoWord} />
+            <p className={styles.brandText}>
+              The Layer 1 quantum-resistant blockchain. Post-quantum security with the
+              performance the next era demands.
+            </p>
+            <span className={styles.status}><i aria-hidden="true" /> Testnet live</span>
+          </div>
+
+          {columns.map((c) => (
+            <nav className={styles.col} key={c.title}>
+              <span className={styles.colTitle}>{c.title}</span>
+              {c.links.map((l) => (
+                <a key={l} href="#" className="link-underline">{l}</a>
+              ))}
+            </nav>
+          ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-12 gap-y-4 text-sm md:text-base">
-          <nav className="flex flex-col space-y-2">
-            <a href="#home" className="fade-link">Home</a>
-            <a href="#about" className="fade-link">About</a>
-            <a href="#developers" className="fade-link">Developers</a>
-            <a href="#wallet" className="fade-link">Wallet</a>
-          </nav>
-          <nav className="flex flex-col space-y-2">
-            <a href="#status" className="fade-link">Status</a>
-            <a href="#blockchain" className="fade-link">Blockchain</a>
-            <a href="#contact" className="fade-link">Contact</a>
-          </nav>
-          <nav className="flex flex-col space-y-2">
-            <a href="#terms" className="fade-link">Terms of service</a>
-            <a href="#privacy" className="fade-link">Privacy Policy</a>
-            <a href="#cookie" className="fade-link">Cookie Preferences</a>
-          </nav>
-          <nav className="flex flex-col space-y-2">
-            <a href="#announcements" className="fade-link">Announcements</a>
-            <a href="#blog" className="fade-link">Blog</a>
-          </nav>
+        <div className={styles.bottom}>
+          <span className={styles.copy}>© {new Date().getFullYear()} Bitqar Foundation. All rights reserved.</span>
+          <span className={styles.copy}>Built for the post-quantum era.</span>
         </div>
       </div>
+
+      <div className={styles.wordmark} aria-hidden="true">bitqar</div>
     </footer>
   );
 };

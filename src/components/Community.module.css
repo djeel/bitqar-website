@@ -1,0 +1,73 @@
+.section {
+  position: relative;
+  padding-block: var(--space-section);
+  overflow: hidden;
+}
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+.glow { bottom: -20%; left: -12%; }
+
+.head { max-width: 30ch; display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.h2 { font-size: var(--text-h2); font-weight: 700; letter-spacing: -0.035em; line-height: 1; }
+.h2 em { font-style: italic; color: var(--color-accent); }
+.lead { color: var(--color-muted); font-size: var(--text-body); line-height: 1.7; max-width: 56ch; }
+
+/* Social cards */
+.socials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+@media (min-width: 760px) { .socials { grid-template-columns: repeat(4, 1fr); } }
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: background var(--duration-normal) var(--ease-expo), border-color var(--duration-normal) var(--ease-expo), transform var(--duration-normal) var(--ease-expo);
+  min-height: 150px;
+  justify-content: space-between;
+}
+.social:hover { background: var(--color-surface-2); border-color: var(--color-accent); transform: translateY(-4px); }
+.socialTop { display: flex; align-items: center; justify-content: space-between; }
+.icon {
+  width: 26px; height: 26px;
+  background: var(--color-ink);
+  -webkit-mask-position: center; mask-position: center;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: contain; mask-size: contain;
+  transition: background var(--duration-normal) var(--ease-expo);
+}
+.social:hover .icon { background: var(--color-accent); }
+.arrow { color: var(--color-muted); transition: transform var(--duration-normal) var(--ease-spring), color var(--duration-fast) ease; }
+.social:hover .arrow { transform: translate(3px, -3px); color: var(--color-accent); }
+.socialName { font-size: var(--text-h3); font-weight: 700; letter-spacing: -0.02em; }
+.socialMeta { font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); }
+
+/* Keyword marquee pills */
+.marquees { display: flex; flex-direction: column; gap: clamp(0.75rem, 1.5vw, 1.25rem); }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-inline: 0.45rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: var(--text-small);
+  color: var(--color-ink);
+  white-space: nowrap;
+  background: var(--color-surface);
+}
+.pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }

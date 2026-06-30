@@ -2,8 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/bitqar-logo-form.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04080A" />
+    <meta name="description" content="Bitqar — the L1 quantum-resistant blockchain. Post-quantum security, 0.5s block times, single-slot finality, 100% EVM compatible." />
+    <title>Bitqar — The L1 Quantum Blockchain</title>
+    <script>
+      (function () {
+        try {
+          var d = document.documentElement;
+          var t = localStorage.getItem('bitqar-theme');
+          d.dataset.theme = t === 'light' ? 'light' : 'dark';
+          d.dataset.js = 'true';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

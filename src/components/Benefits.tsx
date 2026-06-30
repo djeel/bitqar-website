@@ -1,56 +1,56 @@
-import React from 'react';
+import Reveal from './fx/Reveal';
+import Magnetic from './fx/Magnetic';
+import AmbientGlow from './fx/AmbientGlow';
+import Counter from './fx/Counter';
+import styles from './Benefits.module.css';
+
+const stats = [
+  { node: <Counter to={0.5} decimals={1} suffix="s" />, label: 'Block time' },
+  { node: <Counter to={1} decimals={0} suffix="s" />, label: 'Finality' },
+  { node: <Counter to={100} decimals={0} suffix="%" />, label: 'EVM compatible' },
+  { node: <Counter to={256} decimals={0} suffix="-bit" />, label: 'PQ security' },
+];
 
 const Benefits: React.FC = () => {
   return (
-    <section id="benefits" className="relative py-16 md:py-24 bg-transparent px-4 sm:px-6 lg:px-8 overflow-hidden">
-  {/* Overlay flou et semi-transparent harmonisé */}
-  <div
-    className="absolute inset-0 z-0 pointer-events-none"
-    style={{
-      background: 'rgba(255,255,255,0.5)',
-      backdropFilter: 'blur(1px)',
-      WebkitBackdropFilter: 'blur(1px)',
-    }}
-  />
-      {/* Gradient background Figma */}
-      <div
-        className="absolute left-0 right-0 -top-[30vh] -bottom-[30vh] z-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(90deg, rgba(0,0,0,0) 0%, #78dbc4 100%)',
-          opacity: 0.4,
-        }}
-      ></div>
-      {/* Overlay Figma background */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: 'rgba(255,255,255,0.5)',
-          border: '0.5px solid #78dbc4',
-          borderRadius: 0,
-          backdropFilter: 'blur(4px)',
-        }}
-      ></div>
-      <div className="relative z-10 container mx-auto text-center max-w-5xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight" style={{ color: '#40757b' }}>
-          Reinventing the Layer 1 Blockchain
-        </h2>
-        <p className="text-black text-lg md:text-xl mb-12">
-          Bitqar ushers in a new paradigm of blockchain technology. Rebuilt from the ground up to be <br className="hidden md:block"/> the most efficient chain in the world— all while being 100% EVM compatible.
-        </p>
+    <section id="network" className={styles.section}>
+      <AmbientGlow strength={0.04}>
+        <span className={styles.glow} />
+      </AmbientGlow>
 
-        <div className="relative w-full aspect-video shadow-xl flex items-center justify-center overflow-hidden border rounded-[30px]" style={{ background: '#6debcf', opacity: 0.5, border: '0.5px solid #78dbc4', backdropFilter: 'blur(10px)', borderRadius: 30 }}>
-          {/* Placeholder for video. In a real app, this would be an actual video player */}
-          <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-500 bg-opacity-50 rounded-full flex items-center justify-center cursor-pointer">
-            <svg
-              className="w-12 h-12 md:w-16 md:h-16 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
+      <div className={styles.inner}>
+        <Reveal className={styles.head}>
+          <span className="label reveal-up">/ 02 — Network</span>
+          <h2 className={`${styles.h2} reveal-line`}>
+            <span>Reinventing the <em>Layer 1</em> blockchain</span>
+          </h2>
+          <p className={`${styles.lead} reveal-up`}>
+            Bitqar ushers in a new paradigm of blockchain technology — rebuilt from the
+            ground up to be the most efficient chain in the world, all while remaining
+            100% EVM compatible.
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <div className={`${styles.frame} reveal-up`}>
+            <div className={styles.frameGrid} aria-hidden="true" />
+            <span className={styles.frameTag}><i aria-hidden="true" /> Watch the protocol overview</span>
+            <Magnetic strength={0.5}>
+              <button className={styles.play} aria-label="Play protocol overview">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              </button>
+            </Magnetic>
           </div>
-        </div>
+
+          <div className={styles.stats}>
+            {stats.map((s) => (
+              <div className={`${styles.statCell} reveal-up`} key={s.label}>
+                <span className={styles.statNum}>{s.node}</span>
+                <span className={styles.statLabel}>{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
